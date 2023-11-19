@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useContext } from "react";
+import { FC, ReactElement, useContext } from "react";
 
 import UserContext from "../../context/user-context";
 import { Nav } from "../authenticationApp/navigation-links";

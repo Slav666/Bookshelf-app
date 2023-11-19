@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "noEmit": false,
     "noImplicitAny": false,
     "target": "ES2020",
     "useDefineForClassFields": true,
@@ -10,11 +9,12 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    // "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    // "noEmit": true,
+    "noEmit": true,
     "jsx": "react-jsx",
+    "types": ["vitest/globals"],
 
     /* Linting */
     "strict": true,
