@@ -1,4 +1,4 @@
-export let books = [
+export const books = [
   {
     title: "Voice of War",
     author: "Zack Argyle",

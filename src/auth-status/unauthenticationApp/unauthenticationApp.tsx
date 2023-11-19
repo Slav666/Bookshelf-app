@@ -4,6 +4,7 @@ import { Logo } from "../../assets/logo";
 import { LoginForm } from "./loginForm";
 import { RegisterForm } from "./registerForm";
 
+
 const UnauthenticatedApp: FC = () => {
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showRegisterForm, setShowRegisterForm] = useState(false);
@@ -49,7 +50,10 @@ const UnauthenticatedApp: FC = () => {
             </Button>
           </header>
           <div>
-            <LoginForm />
+            <LoginForm
+              onSubmit={() => {}}
+              user={{ username: "", password: "" }}
+            />
           </div>
         </div>
       )}

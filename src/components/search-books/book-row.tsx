@@ -27,11 +27,6 @@ const BookRow: FC<Props> = ({ book }): ReactElement => {
       });
       setUser(result);
     }
-    // const result = await mutateAsync({
-    //   ...user,
-    //   books: [...user.books, book],
-    // });
-    // setUser(result);
   };
 
   return (

@@ -18,13 +18,6 @@ const FinishedSingleBook: FC<Props> = ({ finishedBook }): ReactElement => {
     isLoading,
   } = useRemoveFinishedBook();
 
-  // const removeFinishedBookHandler = async () => {
-  //   const result = await removeFinishedBook({
-  //     bookToDeleteId: finishedBook.id,
-  //     userId: user.id,
-  //   });
-  //   setUser(result);
-  // };
 
   const removeFinishedBookHandler = async () => {
     if (user?.id !== undefined) {
