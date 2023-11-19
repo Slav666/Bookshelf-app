@@ -1,13 +1,13 @@
-import React, { useContext, FC, ReactElement } from "react";
+import { useContext, FC, ReactElement } from "react";
 import UserContext from "../../context/user-context";
-import useRemoveFinishedBook from "../../hooks/useRemoveBookFromUser";
+import useRemoveFinishedBook from "../../hooks/useRemoveFinishBook";
 import { IBook } from "../../utils/interface";
 import { Button } from "../../lib/lib";
 
 interface Props {
   finishedBook: IBook;
+  userId?: string;
 }
-
 
 const FinishedSingleBook: FC<Props> = ({ finishedBook }): ReactElement => {
   const { user, setUser } = useContext(UserContext);
@@ -18,12 +18,23 @@ const FinishedSingleBook: FC<Props> = ({ finishedBook }): ReactElement => {
     isLoading,
   } = useRemoveFinishedBook();
 
+  // const removeFinishedBookHandler = async () => {
+  //   const result = await removeFinishedBook({
+  //     bookToDeleteId: finishedBook.id,
+  //     userId: user.id,
+  //   });
+  //   setUser(result);
+  // };
+
   const removeFinishedBookHandler = async () => {
-    const result = await removeFinishedBook({
-      bookToDeleteId: finishedBook.id,
-      userId: user?.id,
-    });
-    setUser(result);
+    if (user?.id !== undefined) {
+      const result = await removeFinishedBook({
+        bookToDeleteId: finishedBook.id,
+        userId: user.id,
+      });
+      console.log(result);
+      setUser(result);
+    }
   };
 
   if (isLoading) {

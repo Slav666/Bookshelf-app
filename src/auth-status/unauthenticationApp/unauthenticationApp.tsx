@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import { Button } from "../../lib/lib";
 import { Logo } from "../../assets/logo";
 import { LoginForm } from "./loginForm";
