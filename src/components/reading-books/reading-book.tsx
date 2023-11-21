@@ -25,11 +25,6 @@ const SingleReadBook: FC<Props> = ({ book }): ReactElement => {
       });
       setUser(result);
     }
-    // const result = await removeBook({
-    //   bookToDeleteId: book.id,
-    //   userId: user.id,
-    // });
-    // setUser(result);
   };
 
   const addFinishedBookHandler = async () => {
@@ -41,12 +36,6 @@ const SingleReadBook: FC<Props> = ({ book }): ReactElement => {
       });
       setUser(result);
     }
-    // const result = await finishedBook({
-    //   ...user,
-    //   finishedBooks: [...user.finishedBooks, book],
-    //   books: user.books.filter((testBook) => testBook.id !== book.id),
-    // });
-    // setUser(result);
   };
 
   return (

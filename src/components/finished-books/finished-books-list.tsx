@@ -26,20 +26,6 @@ const FinishedListBooks: FC = (): ReactElement => {
           )}
         </ul>
       )}
-      {/* {user?.finishedBooks.length === 0 ? (
-        <div className="flex h-[60vh] items-center justify-center">
-          <p className="text-2xl">No finished books</p>
-        </div>
-      ) : (
-        <ul>
-          {user?.finishedBooks.map((finishedBook) => (
-            <FinishedSingleBook
-              key={finishedBook.id}
-              finishedBook={finishedBook}
-            />
-          ))}
-        </ul>
-      )} */}
     </>
   );
 };

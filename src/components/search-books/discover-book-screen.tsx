@@ -8,12 +8,10 @@ const DiscoverBooksScreen: FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const inputRef = useRef<HTMLInputElement>(null);
-  // Focus the input element and start cursor flashing on the first page render
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
 
-  // Filter books based on the search query
   const filteredBooks = books?.filter((book) => {
     return book?.title.toLowerCase().includes(searchQuery.toLowerCase());
   });

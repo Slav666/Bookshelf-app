@@ -16,13 +16,13 @@ const AuthenticatedApp: FC = (): ReactElement => {
   };
 
   return (
-    <div className="bg-blue-400">
-      <div className="absolute top-40 right-10 flex items-center bg-yellow-500">
+    <div className="bg-gray-400">
+      <div className="absolute top-40 right-10 flex items-center">
         <Button variant="secondary" onClick={handleLoggedOut}>
           Logout
         </Button>
       </div>
-      <div className="mx-auto mt-16 flex w-full max-w-7xl flex-col  p-8 md:flex-row">
+      <div className="mx-auto flex w-full max-w-7xl flex-col  p-8 md:flex-row">
         <div className="mx-auto max-h-[300px]  max-w-[300px] md:w-1/4">
           <Nav />
         </div>
