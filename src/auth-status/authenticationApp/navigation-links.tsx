@@ -18,7 +18,7 @@ const NavLink = (
 
 export const Nav = () => {
   return (
-    <nav className=" rounded-md border border-black px-6 py-4 bg-red-300">
+    <nav className=" rounded-md border border-black px-6 py-4">
       <ul>
         <li>
           <NavLink to="/reading-books-list">Reading List</NavLink>
