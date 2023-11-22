@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-const Logo = ({ width = '48', height = '48' }) => {
+const Logo = ({ width = "48", height = "48" }) => {
   return (
     <svg
       height={`${height}px`}
