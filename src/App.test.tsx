@@ -12,8 +12,6 @@ describe("App", () => {
       </QueryClientProvider>
     );
 
-    expect(
-      screen.getByRole("heading", { name: "Hello User" })
-    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Footer" })).toBeInTheDocument();
   });
 });

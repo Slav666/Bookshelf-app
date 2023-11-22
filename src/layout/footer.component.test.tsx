@@ -8,7 +8,7 @@ describe("Footer", () => {
     render(<Footer />);
 
     expect(
-      screen.getByRole("heading", { name: /footer/i })
+      screen.getByRole("heading", { name: /Footer/i })
     ).toBeInTheDocument();
   });
 });

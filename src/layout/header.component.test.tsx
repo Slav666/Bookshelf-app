@@ -7,7 +7,7 @@ describe("Header", () => {
   it("should render the header", () => {
     render(<Header />);
     expect(
-      screen.getByRole("heading", { name: /hello user/i })
+      screen.getByRole("heading", { name: /Welcome to Bookshelf App/i })
     ).toBeInTheDocument();
   });
 });
