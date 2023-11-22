@@ -76,7 +76,6 @@ const addBookToUser = (userWithNewBook: User): User | undefined => {
   return updatedUser;
 };
 
-
 const removeBookFromUser = (
   deletionBookId: number,
   userId: number
@@ -98,21 +97,6 @@ const removeBookFromUser = (
 
   return undefined; // User with userId not found
 };
-
-
-// const removeBookFromUser = (
-//   deletionBookId: number,
-//   userId: number
-// ): User | undefined => {
-//   const removedBook = users
-//     .find((user) => user.id === userId)
-//     .books.filter((book) => book.id !== deletionBookId);
-//   users = users.map((user) =>
-//     user.id === userId ? { ...user, books: removedBook } : user
-//   );
-//   const findNewUser = users.find((user) => user.id === userId);
-//   return findNewUser;
-// };
 
 const finishedBookFromUser = (userWithFinishedBook: User): User | undefined => {
   users = users.map((user) =>
@@ -145,24 +129,8 @@ const removeFinishedBookFromUser = (
     return findNewUser;
   }
 
-  return undefined; 
+  return undefined;
 };
-
-
-
-// const removeFinishedBookFromUser = (
-//   deletionBookId: number,
-//   userId: number
-// ): User | undefined => {
-//   const removedBook = users
-//     .find((user) => user.id === userId)
-//     .finishedBooks.filter((book) => book.id !== deletionBookId);
-//   users = users.map((user) =>
-//     user.id === userId ? { ...user, finishedBooks: removedBook } : user
-//   );
-//   const findNewUser = users.find((user) => user.id === userId);
-//   return findNewUser;
-// };
 
 export {
   getSingleUser,

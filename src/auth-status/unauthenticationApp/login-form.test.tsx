@@ -23,18 +23,18 @@ describe("Login Form Component", () => {
     expect(screen.getByRole("button", { name: "Log in" })).toBeInTheDocument();
   });
 
-  // it("should call `onSubmit` function when form is valid and `Login` button clicked", async () => {
-  //   render(<LoginForm user={user} onSubmit={onSubmit} />, { wrapper });
+  it("should call `onSubmit` function when form is valid and `Login` button clicked", async () => {
+    render(<LoginForm user={user} onSubmit={onSubmit} />, { wrapper });
 
-  //   await userEvent.type(screen.getByPlaceholderText("username"), USER_TEXT);
-  //   await userEvent.type(
-  //     screen.getByPlaceholderText("password"),
-  //     PASSWORD_TEXT
-  //   );
+    await userEvent.type(screen.getByPlaceholderText("username"), USER_TEXT);
+    await userEvent.type(
+      screen.getByPlaceholderText("password"),
+      PASSWORD_TEXT
+    );
 
-  //   userEvent.click(screen.getByRole("button", { name: "Log in" }));
-  //   await waitFor(() => expect(onSubmit).toHaveBeenCalledWith(user));
-  // });
+    userEvent.click(screen.getByRole("button", { name: "Log in" }));
+    await waitFor(() => expect(onSubmit).toHaveBeenCalledWith(user));
+  });
 
   it("should enable `Login` button when form is valid", async () => {
     render(<LoginForm user={user} onSubmit={onSubmit} />, { wrapper });

@@ -6,7 +6,6 @@ import {
 
 interface ApiResponse {
   data: {
-    // Define the structure of your data here
     id: number;
     username: string;
     password: string;
@@ -34,14 +33,3 @@ export default function useFinishedBookFromUser(): UseMutationResult<
   );
 }
 
-// export default function useFinishedBookFromUser() {
-//   return useMutation((userWithFinishedBook: object) => {
-//     return axios
-//       .put(`/api/finished-book-by-user/`, userWithFinishedBook)
-//       .then((res: object) => {
-//         const data = res.data;
-//         console.log("data return from !!!", data);
-//         return data;
-//       });
-//   });
-// }

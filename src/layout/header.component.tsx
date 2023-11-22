@@ -7,7 +7,6 @@ const Header: FC = (): ReactElement => {
 
   return (
     <header className="header flex items-center justify-center space-x-2 bg-gray-500 p-5">
-      {/* <header className="bg-gray-500 flex p-10 "> */}
       <Logo height="40" width="40" />
       <h2>Welcome to Bookshelf App. </h2>
       <h1 className="text-center">

@@ -12,7 +12,7 @@ const AuthenticatedApp: FC = (): ReactElement => {
 
   const handleLoggedOut = () => {
     setUser(null);
-    navigate("/login");
+    navigate("/");
   };
 
   return (
