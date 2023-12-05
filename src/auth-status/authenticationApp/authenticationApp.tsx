@@ -1,4 +1,4 @@
-import { FC, ReactElement, useContext } from "react";
+import React, { FC, ReactElement, useContext } from "react";
 
 import UserContext from "../../context/user-context";
 import { Nav } from "../authenticationApp/navigation-links";
@@ -12,18 +12,17 @@ const AuthenticatedApp: FC = (): ReactElement => {
 
   const handleLoggedOut = () => {
     setUser(null);
-    navigate("/");
+    navigate("/login");
   };
 
- return (
+  return (
     <div className="bg-blue-400">
-      <div className="flex items-center p-4 justify
-    
+      <div className="absolute top-40 right-10 flex items-center bg-yellow-500">
         <Button variant="secondary" onClick={handleLoggedOut}>
           Logout
         </Button>
       </div>
-      <div className="mx-auto flex w-full max-w-7xl flex-col  p-8 md:flex-row">
+      <div className="mx-auto mt-16 flex w-full max-w-7xl flex-col  p-8 md:flex-row">
         <div className="mx-auto max-h-[300px]  max-w-[300px] md:w-1/4">
           <Nav />
         </div>

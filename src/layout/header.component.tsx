@@ -7,7 +7,8 @@ const Header: FC = (): ReactElement => {
   return (
     <header className="p-10 bg-gray-500 flex items-center justify-center">
       <h1>Hello User: {user?.username}</h1>
-</header>
+    </header>
+  );
 };
 
 export default Header;
