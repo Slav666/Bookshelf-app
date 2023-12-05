@@ -44,7 +44,7 @@ export const LoginForm: FC<InputLoginProps> = () => {
 
   return (
     <form
-      className="flex flex-col items-stretch p-2"
+      className="flex flex-col items-stretch p-2 bg-gray-500"
       onSubmit={handleSubmit((values) => onSubmit(values))}
     >
       <FormGroup>

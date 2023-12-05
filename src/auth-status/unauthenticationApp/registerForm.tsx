@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -48,7 +48,7 @@ export const RegisterForm = () => {
   }, [setFocus]);
   return (
     <form
-      className="flex flex-col items-stretch"
+      className="flex flex-col items-stretch bg-gray-500 p-2"
       onSubmit={handleSubmit((values) => onSubmit(values))}
     >
       <FormGroup>

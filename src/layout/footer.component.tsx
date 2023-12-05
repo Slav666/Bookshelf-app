@@ -1,8 +1,8 @@
 import { FC, ReactElement } from "react";
 
 const Footer: FC = (): ReactElement => (
-  <footer className="p-6 bg-blue-500 flex items-center justify-center">
-    <h2>Footer</h2>
+  <footer className="p-12 bg-gray-500 flex items-center justify-center">
+    <h2>© Copyright. All rights reserved.</h2>
   </footer>
 );
 

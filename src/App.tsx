@@ -32,7 +32,7 @@ import Footer from "./layout/footer.component";
 const App: FC = () => {
   const { user } = useContext(UserContext);
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex full-screen flex-col">
       <Header />
       <div className="h-full">
         {user ? (
