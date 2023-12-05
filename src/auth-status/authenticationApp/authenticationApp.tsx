@@ -15,9 +15,10 @@ const AuthenticatedApp: FC = (): ReactElement => {
     navigate("/");
   };
 
-  return (
-    <div className="bg-gray-400">
-      <div className="absolute top-40 right-10 flex items-center">
+ return (
+    <div className="bg-blue-400">
+      <div className="flex items-center p-4 justify
+    
         <Button variant="secondary" onClick={handleLoggedOut}>
           Logout
         </Button>

@@ -27,7 +27,9 @@ const UnauthenticatedApp: FC = () => {
   };
 
   return (
-    <div className="flex h-[80vh] flex-col items-center justify-center bg-black p-5">
+
+    <div className="flex h-[72vh] flex-col items-center justify-center bg-gray-300  p-5">
+    <div className="flex h-[80vh] flex-col items-center justify-center bg-bl
       <Logo height="80" width="80" />
       <h1 className="m-4 p-4">Bookshelf</h1>
       {!showLoginForm && !showRegisterForm && (

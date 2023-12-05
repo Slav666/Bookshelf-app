@@ -44,6 +44,10 @@ export const LoginForm: FC<InputLoginProps> = () => {
 
   return (
     <form
+
+      className="flex flex-col items-stretch p-2 bg-gray-500"
+      onSubmit={handleSubmit((values) => onSubmit(values))}
+
       className="flex flex-col items-stretch p-2"
       onSubmit={handleSubmit(
         (values) => onSubmit && onSubmit({ email: "", ...values })
