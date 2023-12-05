@@ -19,7 +19,7 @@ export interface InputProps {
   value?: string;
   type?: "password" | "text";
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  disabled?: boolean;
+  disabled?: boolean | undefined;
 }
 
 const Button = ({

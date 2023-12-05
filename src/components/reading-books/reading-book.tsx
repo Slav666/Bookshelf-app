@@ -1,4 +1,4 @@
-import React, { useContext, FC, ReactElement } from "react";
+import { useContext, FC, ReactElement } from "react";
 
 import UserContext from "../../context/user-context";
 import useRemoveBookFromUser from "../../hooks/useRemoveBookFromUser";
@@ -18,20 +18,24 @@ const SingleReadBook: FC<Props> = ({ book }): ReactElement => {
   const { mutateAsync: finishedBook } = useFinishedBookFromUser();
 
   const removeBookFromUserHandler = async () => {
-    const result = await removeBook({
-      bookToDeleteId: book.id,
-      userId: user.id,
-    });
-    setUser(result);
+    if (user) {
+      const result = await removeBook({
+        bookToDeleteId: book.id,
+        userId: user.id,
+      });
+      setUser(result);
+    }
   };
 
   const addFinishedBookHandler = async () => {
-    const result = await finishedBook({
-      ...user,
-      finishedBooks: [...user.finishedBooks, book],
-      books: user.books.filter((testBook) => testBook.id !== book.id),
-    });
-    setUser(result);
+    if (user) {
+      const result = await finishedBook({
+        ...user,
+        finishedBooks: [...user.finishedBooks, book],
+        books: user.books.filter((testBook) => testBook.id !== book.id),
+      });
+      setUser(result);
+    }
   };
 
   return (

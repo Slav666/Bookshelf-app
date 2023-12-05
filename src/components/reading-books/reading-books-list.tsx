@@ -1,4 +1,4 @@
-import React, { useContext, FC, ReactElement } from "react";
+import { useContext, FC, ReactElement } from "react";
 
 import UserContext from "../../context/user-context";
 import SingleReadBook from "./reading-book";

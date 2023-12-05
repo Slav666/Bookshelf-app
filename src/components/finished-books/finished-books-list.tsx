@@ -1,4 +1,4 @@
-import React, { useContext, FC, ReactElement } from "react";
+import { useContext, FC, ReactElement } from "react";
 
 import UserContext from "../../context/user-context";
 import FinishedSingleBook from "./finished-book";
@@ -15,12 +15,15 @@ const FinishedListBooks: FC = (): ReactElement => {
         </div>
       ) : (
         <ul>
-          {user?.finishedBooks.map((finishedBook) => (
-            <FinishedSingleBook
-              key={finishedBook.id}
-              finishedBook={finishedBook}
-            />
-          ))}
+          {user?.finishedBooks.map((finishedBook) =>
+            // Check if finishedBook has the required properties
+            Object.keys(finishedBook).length !== 0 ? (
+              <FinishedSingleBook
+                key={finishedBook.id}
+                finishedBook={finishedBook as IBook}
+              />
+            ) : null
+          )}
         </ul>
       )}
     </>

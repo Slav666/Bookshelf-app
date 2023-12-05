@@ -6,14 +6,12 @@ import { BookRow } from "./book-row";
 const DiscoverBooksScreen: FC = () => {
   const { data: books } = useBooks();
   const [searchQuery, setSearchQuery] = useState("");
-  const inputRef = useRef(null);
 
-  // Focus the input element and start cursor flashing on the first page render
+  const inputRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
-    inputRef.current.focus();
+    inputRef.current?.focus();
   }, []);
 
-  // Filter books based on the search query
   const filteredBooks = books?.filter((book) => {
     return book?.title.toLowerCase().includes(searchQuery.toLowerCase());
   });
@@ -32,15 +30,7 @@ const DiscoverBooksScreen: FC = () => {
       </div>
 
       {filteredBooks?.map((book) => {
-        return (
-          <BookRow
-            key={book.id}
-            book={book}
-            books={[]}
-            isBookAdded={[]}
-            user={undefined}
-          />
-        );
+        return <BookRow key={book.id} book={book} />;
       })}
     </div>
   );

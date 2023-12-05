@@ -10,7 +10,6 @@ interface Book {
   id: number;
   title: string;
   author: string;
-  // Add any other book properties you need
 }
 
 let users: User[] = [
@@ -81,14 +80,22 @@ const removeBookFromUser = (
   deletionBookId: number,
   userId: number
 ): User | undefined => {
-  const removedBook = users
-    .find((user) => user.id === userId)
-    .books.filter((book) => book.id !== deletionBookId);
-  users = users.map((user) =>
-    user.id === userId ? { ...user, books: removedBook } : user
-  );
-  const findNewUser = users.find((user) => user.id === userId);
-  return findNewUser;
+  const userToUpdate = users.find((user) => user.id === userId);
+
+  if (userToUpdate) {
+    const removedBook = userToUpdate.books.filter(
+      (book) => book.id !== deletionBookId
+    );
+
+    users = users.map((user) =>
+      user.id === userId ? { ...user, books: removedBook } : user
+    );
+
+    const findNewUser = users.find((user) => user.id === userId);
+    return findNewUser;
+  }
+
+  return undefined; // User with userId not found
 };
 
 const finishedBookFromUser = (userWithFinishedBook: User): User | undefined => {
@@ -107,14 +114,22 @@ const removeFinishedBookFromUser = (
   deletionBookId: number,
   userId: number
 ): User | undefined => {
-  const removedBook = users
-    .find((user) => user.id === userId)
-    .finishedBooks.filter((book) => book.id !== deletionBookId);
-  users = users.map((user) =>
-    user.id === userId ? { ...user, finishedBooks: removedBook } : user
-  );
-  const findNewUser = users.find((user) => user.id === userId);
-  return findNewUser;
+  const userToUpdate = users.find((user) => user.id === userId);
+
+  if (userToUpdate) {
+    const removedBook = userToUpdate.finishedBooks.filter(
+      (book) => book.id !== deletionBookId
+    );
+
+    users = users.map((user) =>
+      user.id === userId ? { ...user, finishedBooks: removedBook } : user
+    );
+
+    const findNewUser = users.find((user) => user.id === userId);
+    return findNewUser;
+  }
+
+  return undefined;
 };
 
 export {

@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useContext } from "react";
+import { FC, ReactElement, useContext } from "react";
 
 import UserContext from "../../context/user-context";
 import { AuthenticationContextType } from "../../context/user-context";
@@ -8,23 +8,25 @@ import { Button } from "../../lib/lib";
 
 export interface Props {
   book: IBook;
-  user: IUser | null;
-  books: IBook[];
-  isBookAdded: (IBook | undefined)[];
+  user?: IUser | null;
+  books?: IBook[];
+  isBookAdded?: (IBook | undefined)[];
 }
 
 const BookRow: FC<Props> = ({ book }): ReactElement => {
   const { user, setUser } = useContext<AuthenticationContextType>(UserContext);
   const { mutateAsync } = useAddBookToUser();
 
-  const isBookAdded = user.books.find((userBook) => userBook.id === book.id);
+  const isBookAdded = !!user?.books.find((userBook) => userBook.id === book.id);
 
   const addBookToUserHandler = async (): Promise<void> => {
-    const result = await mutateAsync({
-      ...user,
-      books: [...user.books, book],
-    });
-    setUser(result);
+    if (user) {
+      const result = await mutateAsync({
+        ...user,
+        books: [...user.books, book],
+      });
+      setUser(result);
+    }
   };
 
   return (

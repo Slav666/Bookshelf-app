@@ -12,12 +12,13 @@ const AuthenticatedApp: FC = (): ReactElement => {
 
   const handleLoggedOut = () => {
     setUser(null);
-    navigate("/login");
+    navigate("/");
   };
 
-  return (
+ return (
     <div className="bg-blue-400">
-      <div className="flex items-center p-4 justify-end">
+      <div className="flex items-center p-4 justify
+    
         <Button variant="secondary" onClick={handleLoggedOut}>
           Logout
         </Button>
